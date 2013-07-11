@@ -32,11 +32,14 @@ def TESTS_chord_check():
 # scalize() tests
 # note, formula, pool -> scale
 def TESTS_scalize():
+    assert scalize("C", formulas.majbebop              ) == ['C', 'D', 'E', 'F', 'G', 'Ab', 'A', 'B']
+    assert scalize("C", formulas.dombebop              ) == ['C', 'D', 'E', 'F', 'G', 'A', 'Bb', 'B']
+    assert scalize("C", formulas.majblues              ) == ['C', 'D', 'Eb', 'E', 'G', 'A']
     assert scalize("C", formulas.twosemitri            ) == ['C', 'Db', 'D', 'Gb', 'G', 'Ab']
     assert scalize("C", formulas.tritone               ) == ['C', 'Db', 'E', 'Gb', 'G', 'Bb']
     assert scalize("C", formulas.prometheus            ) == ['C', 'D', 'E', 'Gb', 'A', 'Bb']
     assert scalize("C",  formulas.augmented            ) == ['C', 'Eb', 'E', 'G', 'Ab', 'B']
-    assert scalize("A",  formulas.blues                ) == ['A', 'C', 'D', 'Eb', 'E', 'G']
+    assert scalize("A",  formulas.minblues             ) == ['A', 'C', 'D', 'Eb', 'E', 'G']
     assert scalize("C",  formulas.pentmaj              ) == ['C', 'D', 'E', 'G', 'A']
     assert scalize("A",  formulas.pentmin              ) == ['A', 'C', 'D', 'E', 'G']
     assert scalize("E",  formulas.istrian              ) == ['E', 'F', 'G', 'Ab', 'Bb', 'B']
@@ -118,3 +121,5 @@ TESTS_chord_check()
 TESTS_scalize()
 TESTS_chordize()
 TESTS_harmonize()
+
+print "All Tests Passed :D"

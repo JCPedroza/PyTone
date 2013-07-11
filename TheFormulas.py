@@ -1,5 +1,5 @@
 # MODE FORMULAS
-# !!! more modes moar moar, octatonics (both dim, altered), pentatonics
+# resources: http://www.mattwarnockguitar.com/guitar-resources/scales
 
 
 class Formulas:
@@ -8,7 +8,8 @@ class Formulas:
     pentmin =      [3, 2, 2, 3, 2]
     pentmaj =      [2, 2, 3, 2, 3]
     # Hexatonic Scales Formulss
-    blues =        [3, 2, 1, 1, 3, 2]
+    minblues =     [3, 2, 1, 1, 3, 2]
+    majblues =     [2, 1, 1, 3, 2, 3]
     istrian =      [1, 2, 1, 2, 1, 5]
     wholetone =    [2, 2, 2, 2, 2, 2]
     augmented =    [3, 1, 3, 1, 3, 1]
@@ -43,3 +44,6 @@ class Formulas:
     altoct =       [1, 2, 1, 1, 1, 2, 2, 2]
     dimhw =        [1, 2, 1, 2, 1, 2, 1, 2]
     dimwh =        [2, 1, 2, 1, 2, 1, 2, 1]
+    dombebop =     [2, 2, 1, 2, 2, 1, 1, 1]
+    majbebop =     [2, 2, 1, 2, 1, 1, 2, 1]
+    minbebop =     []
