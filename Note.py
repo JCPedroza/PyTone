@@ -9,7 +9,8 @@ class Note(Sound):
         self.name = name
 
     def __str__(self):
-        """ called when printing a Note object, returns object's state """
+        """ called when printing a Note object, returns object's state as
+            string """
         return (" Name:" + self.name + " Freq:" + str(self.frequency) +
                 " Vel:" + str(self.velocity) + " Att:" + str(self.attack) +
                 " Dec:" + str(self.decay) + " Sus:" + str(self.sustain) +
