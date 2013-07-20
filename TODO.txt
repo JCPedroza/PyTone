@@ -1,0 +1,1 @@
+- Put the funcions in Main as methods in classes
