@@ -1,8 +1,8 @@
-cands
+PyTone
 =====
 
-Chords and Scales project in Python
+PyTone
 
 ====
 
-Framework for musical notation processing and interpretation.
+Framework for music development and study. 
