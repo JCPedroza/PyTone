@@ -1,4 +1,7 @@
+- Use OOP in general, convert everything to objects, but leave the option to work with lists, strings, etc (old and new design combined)
+
 - TESTS_chord_check() needs tests with chord objects
 
 - Other data definition needs a class, like a chord class
 
+- Apply systematic design
