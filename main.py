@@ -10,7 +10,7 @@ from chord import Chord
 # ------------ Program -----------------
 # --------------------------------------
 
-# dummy line  et12_pool is: pool: "equal temperament 12 semitone pool" one of: 12 equal tempered notes
+# et12_pool is: pool: "equal temperament 12 semitone pool" one of: 12 equal tempered notes
 et12_pool = ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"]
 # the_modifiers is one of: possible chord quality
 maj7_modifiers = ["maj7", "min7", "7", "min7b5"]
