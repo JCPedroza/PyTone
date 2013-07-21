@@ -1,8 +1,26 @@
-from Main import *
+from main import *
 
 # --------------------------------------
 # ------------ TESTS -------------------
 # --------------------------------------
+
+## Variables for testing:
+note1 = Note(440,    "A")
+note2 = Note(466.16, "Bb")
+note3 = Note(493.88, "B")
+note4 = Note(523.25, "C")
+note8 = Note(659.26, "E")
+note10 = Note(739.99, "Gb")
+
+
+# step_count() tests
+# note note pool -> interval
+def TESTS_step_count():
+    assert the_process.step_count(note1, note2, et12_pool) == 1
+    assert the_process.step_count(note1, note3, et12_pool) == 2
+    assert the_process.step_count(note1, note4, et12_pool) == 3
+    assert the_process.step_count(note1, note8, et12_pool) == 7
+    assert the_process.step_count(note3, note1, et12_pool) == -2
 
 
 # chord_check() tests
@@ -117,6 +135,7 @@ def TESTS_harmonize():
     assert harmonize("B",  formulas.dimwh,       et12_pool) == ['Bdim7', 'Dbdim7', 'Ddim7', 'Edim7', 'Fdim7', 'Gdim7', 'Abdim7', 'Bbdim7']
 
 # Run the tests:
+TESTS_step_count()
 TESTS_chord_check()
 TESTS_scalize()
 TESTS_chordize()

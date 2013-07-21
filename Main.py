@@ -5,8 +5,10 @@
 # apply systematic design
 # !!!!!!! ANTES DE QUE CONTINUES CAMBIA TODO A OBJETOS O SERA MAS DIFICIL HACERLO MAS TARDE !!!
 
-import TheFormulas
-import Tests
+import formulas
+import tests
+from process import Process
+from note import Note
 
 # --------------------------------------
 # -------- DATA DEFINITIONS ------------
@@ -51,7 +53,10 @@ all_the_chords =  [a + b for a in et12_pool for b in all7th_modifiers]
 the_modes =       ["lydian", "ionian", "mixolydian", "dorian", "aeolian", "phrygian", "locrian"]
 
 # Formulas instance that provide formulas of scale structures:
-formulas = TheFormulas.Formulas()
+formulas = formulas.Formulas()
+# Process instance to provide note processing methods
+the_process = Process()
+
 
 # note, note, pool -> interval
 # !!! everything, haz que regrese un objecto, las propiedades del objeto
@@ -61,15 +66,6 @@ def interval_check(note1, note2, pool=et12_pool):
     """ produces the interval between two notes in the given pool
         return false if the note is not found in the pool"""
     pass
-
-
-# note, note, pool -> (int, int)
-def step_count(note1, note2, pool=et12_pool):
-    """ returns the distance between two notes in a pool"""
-    if note1 in pool and note2 in pool:
-        return (pool.index(note1) - pool.index(note2), pool.index(note2) - pool.index(note1))
-    else:
-        return False
 
 
 # chord, pool -> chordname
@@ -156,6 +152,3 @@ def harmonize(note, formula=formulas.ionian, pool=et12_pool):
     for e in chordscale:
         harmony.append(chord_check(e, pool))
     return harmony
-
-
-
