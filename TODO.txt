@@ -1,4 +1,4 @@
-- Put the funcions in Main as methods in the process class
-    change tests accordingly
+- TESTS_chord_check() needs tests with chord objects
 
 - Other data definition needs a class, like a chord class
+
