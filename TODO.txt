@@ -1,1 +1,4 @@
-- Put the funcions in Main as methods in classes
+- Put the funcions in Main as methods in the process class
+    change tests accordingly
+
+- Other data definition needs a class, like a chord class
