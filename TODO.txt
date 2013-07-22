@@ -1,3 +1,6 @@
+- Need a function that consumes a sharp note and turns it into a flat note, or
+other dynamic to handle enharmonic (C sharp and D flat, for example)
+
 - Use OOP in general, convert everything to objects, but leave the option to work with lists, strings, etc (old and new design combined)
 
 - TESTS_chord_check() needs tests with chord objects
