@@ -2,8 +2,6 @@
 from note import Note
 from chord import Chord
 
-# !!! add default values to arguments if needed
-
 
 class Process:
 
@@ -27,25 +25,34 @@ class Process:
         returns the scale derived from the formula applied to the pool
         with note as root, accepts string or Note object"""
         if isinstance(note, Note):
-            if note.name in pool:
-                current_index = pool.index(note.name)
-                return_list = []
-                for e in formula:
-                    return_list.append(pool[current_index])
-                    current_index = (current_index + e) % len(pool)
-                return return_list
-            else:
-                return False
+            return self._scalize_obj(note, formula, pool)
         elif type(note) == str:
-            if note in pool:
-                current_index = pool.index(note)
-                return_list = []
-                for e in formula:
-                    return_list.append(pool[current_index])
-                    current_index = (current_index + e) % len(pool)
-                return return_list
-            else:
-                return False
+            return self._scalize_str(note, formula, pool)
+
+    def _scalize_obj(self, note, formula, pool):
+        """ helper for scalize, deals with Note objects """
+        if note.name in pool:
+            current_index = pool.index(note.name)
+            return_list = []
+            for e in formula:
+                return_list.append(pool[current_index])
+                current_index = (current_index + e) % len(pool)
+            return return_list
+        else:
+            return False
+
+    def _scalize_str(self, note, formula, pool):
+        """ helper for scalize, deals with strings """
+        if note in pool:
+            current_index = pool.index(note)
+            return_list = []
+            for e in formula:
+                return_list.append(pool[current_index])
+                current_index = (current_index + e) % len(pool)
+            return return_list
+        else:
+            return False
+
 
     # scale -> chordscale
     # !!! consume and produce objects maybe?
