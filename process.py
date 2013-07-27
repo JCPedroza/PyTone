@@ -10,6 +10,8 @@ class Process:
     et12_pool = ["Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"]
 
     # !!! do a version of this using frequency, code it using exceptions instead of False
+    # !!! doesn't worl poperly when comparing an element from the end of the pool with
+    # an element from the start of the pool, implement +len(pool) lke in the java version
     def step_count(self, note1, note2, pool=et12_pool):
         """ note, note, pool -> int
         returns the distance between two notes in a pool """
@@ -55,21 +57,22 @@ class Process:
 
 
     # scale -> chordscale
-    # !!! consume and produce objects maybe?
+    # !!! consume and produce objects maybe?, as in jytone, this should be named harmonize
     def chordize(self, scale, depth):
         """ returns a list with the chords formed by thirds on a scale
             depth 1 = triads and depth 2 = 7th chords """
         chordscale = []
         scale_length = len(scale)
         if depth == 1:
-            for e in range(len(scale)):
+            for e in range(scale_length):
                 chordscale.append([scale[e], scale[(e + 2) % scale_length], scale[(e + 4) % scale_length]])
         if depth == 2:
-            for e in range(len(scale)):
+            for e in range(scale_length):
                 chordscale.append([scale[e], scale[(e + 2) % scale_length], scale[(e + 4) % scale_length], scale[(e + 6) % scale_length]])
         return chordscale
 
-    # chord -> harmony
+    # chord -> harmony, !!! as in jatone this should be renamed 
+  
     def harmonize(self, note, formula, pool=et12_pool):
         """ returns harmony of a given note """
         chordscale = self.chordize(self.scalize(note, formula, pool), 2)
