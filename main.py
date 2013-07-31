@@ -2,7 +2,6 @@
 
 import formulas
 import tests
-from process import Process
 from note import Note
 from chord import Chord
 
@@ -22,5 +21,3 @@ the_modes = ["lydian", "ionian", "mixolydian", "dorian", "aeolian", "phrygian", 
 
 # Formulas instance that provide formulas of scale structures:
 formulas = formulas.Formulas()
-# Process instance to provide note processing methods
-the_process = Process()
