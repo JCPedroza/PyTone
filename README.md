@@ -1,8 +1,4 @@
-PyTone
+Xochi Python
 =====
 
-PyTone
-
-====
-
-Framework for music development and study. 
+Python open source library for music development and study. It's still on a very early stage of development. 
