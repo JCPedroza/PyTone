@@ -102,8 +102,9 @@ def interval_check(note1, note2, pool=et12_pool):
 
 #===================================================================
 #   Chord recognition
-#   Algorithm taken from Music theory Python package, chords module (Copyright (C) 2008-2009, Bart Spaans)
+#   Algorithm taken from Music theory Python package, Mingus, chords module (Copyright (C) 2008-2009, Bart Spaans)
 #   Project page: https://code.google.com/p/mingus/
+# !!! implement your own intervals.produce to use with this algorithm, it is not defined throws error
 #===================================================================
 
 def determine(chord, shorthand = False, no_inversions = False, no_polychords = False):
@@ -112,8 +113,8 @@ def determine(chord, shorthand = False, no_inversions = False, no_polychords = F
         return []
     elif len(chord) == 1:
         return chord
-    elif len(chord) == 2:
-        return [intervals.determine(chord[0], chord[1])]
+    # elif len(chord) == 2:  !!! neesa intervals module from brother project
+    #     return [intervals.determine(chord[0], chord[1])]
     elif len(chord) == 3:
         return determine_triad(chord, shorthand, no_inversions, no_polychords)
     elif len(chord) == 4:
