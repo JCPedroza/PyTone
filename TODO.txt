@@ -8,3 +8,5 @@ other dynamic to handle enharmonic (C sharp and D flat, for example)
 - Other data definition needs a class, like a chord class
 
 - Apply systematic design
+
+- Maybe the Python implementation shouldn't be so class and object focused, make options to work with python's primitives   
