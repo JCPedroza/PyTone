@@ -55,7 +55,6 @@ class Process:
         else:
             return False
 
-
     # scale -> chordscale
     # !!! consume and produce objects maybe?, as in jytone, this should be named harmonize
     def chordize(self, scale, depth):
@@ -71,8 +70,8 @@ class Process:
                 chordscale.append([scale[e], scale[(e + 2) % scale_length], scale[(e + 4) % scale_length], scale[(e + 6) % scale_length]])
         return chordscale
 
-    # chord -> harmony, !!! as in jatone this should be renamed 
-  
+    # chord -> harmony, !!! as in jatone this should be renamed
+
     def harmonize(self, note, formula, pool=et12_pool):
         """ returns harmony of a given note """
         chordscale = self.chordize(self.scalize(note, formula, pool), 2)
@@ -85,43 +84,7 @@ class Process:
     # !!! use exceptions instead of false
     # !!! consume and poduce objects if needed: for now it can consume chord both as a list or as an object
     def chord_check(self, chord, pool=et12_pool):
-        """ chord, pool -> chordname (string)
-        returns the name of the chord as a string, returns False if no chord name is found """
-        semitone_count = []
-        if isinstance(chord, Chord):
-            note_list = [e.name for e in chord.notes]
-        elif type(chord) == list:
-            note_list = chord
-        chord_length = len(note_list)
-        pool_length = len(pool)
-        for e in range(len(note_list) - 1):
-            next_one = note_list[(e + 1) % chord_length]
-            semitone_count.append(pool.index(note_list[e]) - pool.index(next_one))
-        # transforms semitone_count into abs numbers and corrects indexing dynamic issues
-        for e in range(len(semitone_count)):
-            if semitone_count[e] > 0:
-                semitone_count[e] = semitone_count[e] - pool_length
-        for e in range(len(semitone_count)):
-            semitone_count[e] = abs(semitone_count[e])
-        #debug print semitone_count
-        # checks for patter, returns name
-        if semitone_count == [3, 4, 3]:
-            return str(note_list[0]) + "min7"
-        elif semitone_count == [4, 3, 4]:
-            return str(note_list[0]) + "maj7"
-        elif semitone_count == [3, 3, 4]:
-            return str(note_list[0]) + "min7b5"
-        elif semitone_count == [4, 3, 3]:
-            return str(note_list[0]) + "7"
-        elif semitone_count == [3, 3, 3]:
-            return str(note_list[0]) + "dim7"
-        elif semitone_count == [3, 4, 4]:
-            return str(note_list[0]) + "minmaj7"
-        elif semitone_count == [4, 4, 3]:
-            return str(note_list[0]) + "maj7#5"
-        else:
-            # Returns False if no chord name is found
-            return False
+        pass
 
     # scale -> scale
     # !!! everything
